@@ -4,6 +4,7 @@
 
 template<class T>
 class MyStack {
+	
 };
 
 #endif  // INCLUDE_MYSTACK_H_

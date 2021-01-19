@@ -47,16 +47,14 @@ class MyStack {
             return stack_values[stack_head - 1];
     }
     T pop() {
-        if (stack_head <= 0)
-            throw -1;
-        stack_head--;
-        return stack_values[stack_head];
+        if (stack_head != 0)
+          stack_head--;
+          return stack_values[stack_head];
     }
     void push(T element) {
-        if (isFull())
-            throw -2;
-        stack_values[stack_head] = element;
-        stack_head++;
+        if (!isFull())
+          stack_values[stack_head] = element;
+          stack_head++;
     }
 };
 

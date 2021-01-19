@@ -73,6 +73,6 @@ std::string infix2postfix(std::string infix) {
             postfix += infix[i];
     }
     while (!stack.isEmpty())
-      postfix = add_to_postfix(postfix, stack.pop());
+      postfix += stack.pop();
     return postfix;
 }

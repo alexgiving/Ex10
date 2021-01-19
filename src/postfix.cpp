@@ -27,8 +27,9 @@ int get_priority(char s) {
 //  }
 
 std::string add_to_postfix(std::string string, char element) {
-  string = string + element;
-  return string = string + ' ';
+  string.push_back(element);
+  string.push_back(' ');
+  return string;
 }
 
 bool is_symbol(char element) {
@@ -70,9 +71,11 @@ std::string infix2postfix(std::string infix) {
         if (isdigit(infix[i]) && is_symbol(infix[i + 1]))
           postfix = add_to_postfix(postfix, infix[i]);
         else
-            postfix += infix[i];
+            postfix.push_back(infix[i]);
     }
     while (!stack.isEmpty())
-      postfix += stack.pop();
+      postfix = add_to_postfix(postfix, stack.pop());
+
+    postfix.pop_back();
     return postfix;
 }

@@ -54,7 +54,7 @@ class MyStack {
     }
     void push(T element) {
         if (isFull())
-          throw 2;
+          return;
         stack_values[stack_head] = element;
         stack_head++;
     }

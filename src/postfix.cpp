@@ -21,10 +21,10 @@ int get_priority(char s) {
 }
 
 
-//void add_to_postfix(std::string &string, char element) {
-//    string = string + element;
-//    string = string + ' ';
-//}
+//  void add_to_postfix(std::string &string, char element) {
+//      string = string + element;
+//      string = string + ' ';
+//  }
 
 std::string add_to_postfix(std::string string, char element) {
   string = string + element;

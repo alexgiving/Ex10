@@ -33,7 +33,6 @@ std::string infix2postfix(std::string infix) {
     std::string postfix;
     MyStack<char> stack(10);
     for (char i = 0; i < infix.length(); i++) {
-
         if (infix[i] == ' ')
             continue;
 
@@ -51,7 +50,8 @@ std::string infix2postfix(std::string infix) {
 
         // If + - * /
         if (get_priority(infix[i]) > 1) {
-            if (get_priority(infix[i]) > get_priority(stack.get()) || stack.isEmpty()) {
+            if (get_priority(infix[i]) > get_priority(stack.get())
+            || stack.isEmpty()) {
                 stack.push(infix[i]);
             } else {
                 while (get_priority(infix[i]) <= get_priority(stack.get()))
@@ -61,13 +61,11 @@ std::string infix2postfix(std::string infix) {
             continue;
         }
 
-        if (isdigit(infix[i]) && is_symbol(infix[i + 1])) {
+        if (isdigit(infix[i]) && is_symbol(infix[i + 1]))
             add_to_postfix(postfix, infix[i]);
-        } else
+        else
             postfix += (infix[i]);
-
    }
-
     while (!stack.isEmpty())
         add_to_postfix(postfix, stack.pop());
 

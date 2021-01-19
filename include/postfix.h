@@ -6,4 +6,4 @@
 #include <string>
 std::string infix2postfix(std::string infix);
 
-#endif
+#endif  // INCLUDE_POSTFIX_H_

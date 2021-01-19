@@ -5,11 +5,12 @@
 
 template <typename T>
 class MyStack {
-private:
+ private:
     unsigned int stack_size {};
     unsigned int stack_head = 0;
     T *stack_values;
-public:
+
+ public:
     // constructors
     explicit MyStack(unsigned int new_size) {
         stack_size = new_size;

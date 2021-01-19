@@ -47,19 +47,18 @@ class MyStack {
             return stack_values[stack_head - 1];
     }
     T pop() {
-        if (stack_head != 0)
+        if (stack_head != 0) {
           stack_head--;
           return stack_values[stack_head];
+        }
     }
     void push(T element) {
-        if (!isFull())
+        if (!isFull()) {
           stack_values[stack_head] = element;
           stack_head++;
+        }
     }
 };
 
-
-// Warning message: -1 -> stack is empty but use function pop
-// Warning message: -2 -> stack is full but use function push
 
 #endif  // INCLUDE_MYSTACK_H_

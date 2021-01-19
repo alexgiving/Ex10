@@ -21,9 +21,14 @@ int get_priority(char s) {
 }
 
 
-void const add_to_postfix(std::string &string, char element) {
-    string = string + element;
-    string = string + ' ';
+//void add_to_postfix(std::string &string, char element) {
+//    string = string + element;
+//    string = string + ' ';
+//}
+
+std::string add_to_postfix(std::string string, char element) {
+  string = string + element;
+  return string = string + ' ';
 }
 
 bool is_symbol(char element) {
@@ -44,7 +49,7 @@ std::string infix2postfix(std::string infix) {
 
         if (infix[i] == ')') {
             while (get_priority(stack.get()) != 0)
-                add_to_postfix(postfix, stack.pop());
+              postfix = add_to_postfix(postfix, stack.pop());
             stack.pop();
             continue;
         }
@@ -56,18 +61,18 @@ std::string infix2postfix(std::string infix) {
                 stack.push(infix[i]);
             } else {
                 while (get_priority(infix[i]) <= get_priority(stack.get()))
-                    add_to_postfix(postfix, stack.pop());
+                  postfix = add_to_postfix(postfix, stack.pop());
                 stack.push(infix[i]);
             }
             continue;
         }
 
         if (isdigit(infix[i]) && is_symbol(infix[i + 1]))
-            add_to_postfix(postfix, infix[i]);
+          postfix = add_to_postfix(postfix, infix[i]);
         else
-            postfix += (infix[i]);
+            postfix += infix[i];
     }
     while (!stack.isEmpty())
-        add_to_postfix(postfix, stack.pop());
+      postfix = add_to_postfix(postfix, stack.pop());
     return postfix;
 }

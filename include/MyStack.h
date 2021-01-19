@@ -48,13 +48,13 @@ class MyStack {
     }
     T pop() {
         if (stack_head == 0)
-            throw 1;
+          return 0;
         stack_head--;
         return stack_values[stack_head];
     }
     void push(T element) {
         if (isFull())
-          return;
+          throw 2;
         stack_values[stack_head] = element;
         stack_head++;
     }

@@ -38,7 +38,7 @@ bool is_symbol(char element) {
 
 std::string infix2postfix(std::string infix) {
     std::string postfix;
-    MyStack<char> stack(10);
+    MyStack<char> stack(infix.length());
     for (char i = 0; i < infix.length(); i++) {
         if (infix[i] == ' ')
             continue;

@@ -4,7 +4,7 @@
 #include "postfix.h"
 
 int main() {
-    std::string s1("");
+    std::string s1("(6 * (4 - 2) + 5) * (2.6 + 3 * 7) - 9");
     std::string s2 = infix2postfix(s1);
     std::cout << s2 << "\n";
     s1 = "1 + 3.5 * (2 - 5 / ( 10 + 9) + 4) - 1.5";  // a harder example

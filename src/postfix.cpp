@@ -20,7 +20,8 @@ int get_priority(char s) {
     }
 }
 
-void add_to_postfix(std::string &string, char element) {
+
+void const add_to_postfix(std::string &string, char element) {
     string = string + element;
     string = string + ' ';
 }
@@ -65,9 +66,8 @@ std::string infix2postfix(std::string infix) {
             add_to_postfix(postfix, infix[i]);
         else
             postfix += (infix[i]);
-   }
+    }
     while (!stack.isEmpty())
         add_to_postfix(postfix, stack.pop());
-
     return postfix;
 }
